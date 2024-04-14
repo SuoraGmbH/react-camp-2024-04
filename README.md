@@ -10,6 +10,13 @@ In order to start working, do the following
 - open a terminal inside the cloned repo
 - run `npm install`
 - run `npm run dev`
+- 
+```shell
+git clone https://github.com/SuoraGmbH/react-camp-2024-04.git
+cd react-camp-2024-04
+npm install
+npm run dev
+```
 
 This will open a browser with a message saying that you can start editing code.
 
