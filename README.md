@@ -11,15 +11,14 @@ In order to start working, do the following
 - run `npm install`
 - run `npm run dev`
 
+This will open a browser with a message saying that you can start editing code.
+
 ```shell
 git clone https://github.com/SuoraGmbH/react-camp-2024-04.git
 cd react-camp-2024-04
 npm install
 npm run dev
 ```
-
-This will open a browser with a message saying that you can start editing code.
-
 ## Most Important Commands
 ```shell
 
