@@ -1,5 +1,11 @@
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 const element = <h1>Hallo "Muenchen"</h1>;
 
-ReactDOM.render(element, document.getElementById("root"));
+const container = document.getElementById("root");
+
+if (container === null) {
+  alert("Mir fehlt der container 😿");
+} else {
+  ReactDOM.createRoot(container).render(element);
+}
