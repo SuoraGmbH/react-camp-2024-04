@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 
-const element = <h1>Hallo "Muenchen"</h1>;
+const element = <h1>Hallo "München"</h1>;
 
 const container = document.getElementById("root");
 
