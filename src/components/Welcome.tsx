@@ -1,9 +1,13 @@
 import React from "react";
 
 interface Props {
-  city: string;
+  city?: string;
 }
 
 export const Welcome: React.FunctionComponent<Props> = ({ city }) => {
-  return <h1>Hello {city}</h1>;
+  if (!city) {
+    return <h1>Hello stranger</h1>;
+  }
+
+  return <h1>Hello {city?.toUpperCase()}</h1>;
 };
