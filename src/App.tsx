@@ -6,8 +6,6 @@ export function App() {
       <Welcome city="Oer-Erkenschwick" />
       <Welcome city="München" />
       <Welcome />
-      {Welcome({ city: "Mainz" })}
-      Hallo Christian 👋
     </div>
   );
 }
