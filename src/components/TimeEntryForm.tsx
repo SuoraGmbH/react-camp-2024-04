@@ -7,6 +7,12 @@ export const TimeEntryForm: React.FunctionComponent = () => {
   ) => {
     event.preventDefault();
     console.log("Hello World");
+
+    console.log(event.target); // Zugriff auf das <form> element
+    const formData = new FormData(event.target);
+    console.log(formData.get("comment"));
+
+    console.log(Object.fromEntries(formData.entries()));
   };
 
   return (
