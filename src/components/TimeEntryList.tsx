@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import TimeEntry from "../domain/TimeEntry.ts";
 import { TimeEntryView } from "./TimeEntryView.tsx";
 
 export const TimeEntryList: React.FunctionComponent = () => {
-  const timeEntries: TimeEntry[] = [
+  const initialTimeEntries: TimeEntry[] = [
     {
       id: "46262603-e773-450e-b58c-f04853576334",
       comment: "React lernen",
@@ -25,6 +25,7 @@ export const TimeEntryList: React.FunctionComponent = () => {
       end: new Date(),
     },
   ];
+  const [timeEntries, setTimeEntries] = useState(initialTimeEntries);
 
   return (
     <div>
