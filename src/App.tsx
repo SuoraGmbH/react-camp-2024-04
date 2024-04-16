@@ -35,9 +35,7 @@ export function App() {
       <TimeEntryList />
       <TimeEntryForm
         onAddTimeEntry={(timeEntry: TimeEntry) => {
-          setTimeEntries((prevTimeEntries) => {
-            return [...prevTimeEntries, timeEntry];
-          });
+          setTimeEntries((prevTimeEntries) => [...prevTimeEntries, timeEntry]);
         }}
       />
       <hr />
