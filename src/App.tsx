@@ -2,6 +2,7 @@ import { Welcome } from "./components/Welcome";
 import { TimeEntryView } from "./components/TimeEntryView.tsx";
 import TimeEntry from "./domain/TimeEntry.ts";
 import { TimeEntryForm } from "./components/TimeEntryForm.tsx";
+import { Counter } from "./components/Counter.tsx";
 
 export function App() {
   const timeEntry: TimeEntry = {
@@ -13,6 +14,9 @@ export function App() {
 
   return (
     <>
+      <Counter />
+      <Counter />
+      <hr />
       <Welcome city="Oer-Erkenschwick" />
       <Welcome city="München" />
       <Welcome />
