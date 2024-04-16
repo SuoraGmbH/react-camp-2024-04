@@ -3,6 +3,7 @@ import { TimeEntryView } from "./components/TimeEntryView.tsx";
 import TimeEntry from "./domain/TimeEntry.ts";
 import { TimeEntryForm } from "./components/TimeEntryForm.tsx";
 import { Counter } from "./components/Counter.tsx";
+import { GithubRepoStats } from "./components/GithubRepoStats.tsx";
 
 export function App() {
   const timeEntry: TimeEntry = {
@@ -14,6 +15,7 @@ export function App() {
 
   return (
     <>
+      <GithubRepoStats />
       <Counter />
       <Counter />
       <hr />
