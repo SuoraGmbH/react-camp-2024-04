@@ -27,7 +27,9 @@ export function App() {
       end: new Date(),
     },
   ];
-  const [timeEntries, setTimeEntries] = useState(initialTimeEntries);
+
+  const [timeEntries, setTimeEntries] =
+    useState<readonly TimeEntry[]>(initialTimeEntries);
 
   return (
     <>
