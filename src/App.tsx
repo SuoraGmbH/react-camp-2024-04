@@ -32,10 +32,12 @@ export function App() {
 
   return (
     <>
-      <TimeEntryList />
+      <TimeEntryList timeEntries={timeEntries} />
       <TimeEntryForm
         onAddTimeEntry={(timeEntry: TimeEntry) => {
-          setTimeEntries((prevTimeEntries) => [...prevTimeEntries, timeEntry]);
+          setTimeEntries((prevTimeEntries) => {
+            return [...prevTimeEntries, timeEntry];
+          });
         }}
       />
       <hr />
