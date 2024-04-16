@@ -1,5 +1,4 @@
 import { Welcome } from "./components/Welcome";
-import { TimeEntryView } from "./components/TimeEntryView.tsx";
 import TimeEntry from "./domain/TimeEntry.ts";
 import { TimeEntryForm } from "./components/TimeEntryForm.tsx";
 import { Counter } from "./components/Counter.tsx";
