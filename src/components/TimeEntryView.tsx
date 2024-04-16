@@ -10,9 +10,9 @@ export const TimeEntryView: React.FunctionComponent<Props> = ({
 }) => {
   useEffect(() => {
     document.title = timeEntry.comment;
-    alert("Effekt wird ausgeführt");
-  }, []);
-  alert("Komponente rendert");
+    // alert("Effekt wird ausgeführt");
+  }, [timeEntry.comment]);
+  // alert("Komponente rendert");
 
   return <div>{timeEntry.comment}</div>;
 };
