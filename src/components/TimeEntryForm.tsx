@@ -11,13 +11,16 @@ export const TimeEntryForm: React.FunctionComponent = () => {
         console.log("Hello World");
       }}
     >
-      <input
-        name="comment"
-        value={inputValue}
-        onChange={(event) => {
-          setInputValue(event.target.value);
-        }}
-      />
+      <label>
+        Comment
+        <input
+          name="comment"
+          value={inputValue}
+          onChange={(event) => {
+            setInputValue(event.target.value);
+          }}
+        />
+      </label>
 
       {inputValue}
       <button type="submit">Absenden</button>
