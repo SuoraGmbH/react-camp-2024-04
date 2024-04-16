@@ -1,6 +1,7 @@
 import { Welcome } from "./components/Welcome";
 import { TimeEntryView } from "./components/TimeEntryView.tsx";
 import TimeEntry from "./domain/TimeEntry.ts";
+import { TimeEntryForm } from "./components/TimeEntryForm.tsx";
 
 export function App() {
   const timeEntry: TimeEntry = {
@@ -11,11 +12,12 @@ export function App() {
   };
 
   return (
-    <div>
+    <>
       <Welcome city="Oer-Erkenschwick" />
       <Welcome city="München" />
       <Welcome />
       <TimeEntryView timeEntry={timeEntry} />
-    </div>
+      <TimeEntryForm />
+    </>
   );
 }
