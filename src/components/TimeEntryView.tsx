@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TimeEntry from "../domain/TimeEntry.ts";
 
 interface Props {
@@ -8,5 +8,11 @@ interface Props {
 export const TimeEntryView: React.FunctionComponent<Props> = ({
   timeEntry,
 }) => {
+  useEffect(() => {
+    document.title = timeEntry.comment;
+    alert("Effekt wird ausgeführt");
+  }, []);
+  alert("Komponente rendert");
+
   return <div>{timeEntry.comment}</div>;
 };
