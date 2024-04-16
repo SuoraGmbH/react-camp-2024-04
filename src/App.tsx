@@ -4,6 +4,7 @@ import TimeEntry from "./domain/TimeEntry.ts";
 import { TimeEntryForm } from "./components/TimeEntryForm.tsx";
 import { Counter } from "./components/Counter.tsx";
 import { GithubRepoStats } from "./components/GithubRepoStats.tsx";
+import { TimeEntryList } from "./components/TimeEntryList.tsx";
 
 export function App() {
   const timeEntry: TimeEntry = {
@@ -15,6 +16,7 @@ export function App() {
 
   return (
     <>
+      <TimeEntryList />
       <GithubRepoStats />
       <Counter />
       <Counter />
