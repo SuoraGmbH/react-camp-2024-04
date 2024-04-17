@@ -8,7 +8,7 @@ export const TimeEntryListFromBackend = () => {
   useEffect(() => {
     fetch("http://localhost:3001/timeEntries")
       .then((response) => response.json())
-      .then((data) => setTimeEntries(data));
+      .then(setTimeEntries);
   }, []);
 
   return <TimeEntryList timeEntries={timeEntries} />;
