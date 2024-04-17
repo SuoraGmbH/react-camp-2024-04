@@ -1,21 +1,20 @@
-import { test } from "vitest";
+import { beforeEach, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Counter } from "./Counter.tsx";
 import { userEvent } from "@testing-library/user-event";
 
-test("💨", () => {
+beforeEach(() => {
   render(<Counter />);
 });
 
-it("initializes the counter with zero", () => {
-  render(<Counter />);
+test("💨", () => {});
 
+it("initializes the counter with zero", () => {
   expect(screen.getByText(/zähler steht bei 0/i)).toBeVisible();
 });
 
 test("clicking the button increments the counter to 1", async () => {
   const user = userEvent.setup();
-  render(<Counter />);
   await user.click(
     screen.getByRole("button", {
       name: /increment/i,
@@ -27,7 +26,6 @@ test("clicking the button increments the counter to 1", async () => {
 
 test("clicking the button twice increments the counter to 2", async () => {
   const user = userEvent.setup();
-  render(<Counter />);
   await user.click(
     screen.getByRole("button", {
       name: /increment/i,
