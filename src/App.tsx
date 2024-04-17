@@ -5,7 +5,12 @@ import { Counter } from "./components/Counter.tsx";
 import { GithubRepoStats } from "./components/GithubRepoStats.tsx";
 import { TimeEntryList } from "./components/TimeEntryList.tsx";
 import { useState } from "react";
+import { Blabla } from "./components/Blabla.tsx";
+import { TimeEntryListFromBackend } from "./components/TimeEntryListFromBackend.tsx";
+import { TimeEntryListTanstackQuery } from "./components/TimeEntryListTanstackQuery.tsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
 export function App() {
   const initialTimeEntries: TimeEntry[] = [
     {
@@ -32,15 +37,8 @@ export function App() {
     useState<readonly TimeEntry[]>(initialTimeEntries);
 
   return (
-    <>
-      <TimeEntryList timeEntries={timeEntries} />
-      <TimeEntryForm
-        onAddTimeEntry={(timeEntry: TimeEntry) => {
-          setTimeEntries((prevTimeEntries) => {
-            return [...prevTimeEntries, timeEntry];
-          });
-        }}
-      />
+    <QueryClientProvider client={queryClient}>
+      <TimeEntryListFromBackend />
       <hr />
       <TimeEntryListTanstackQuery />
       {/*<Blabla />*/}
@@ -59,5 +57,6 @@ export function App() {
       {/*<Welcome city="Oer-Erkenschwick" />*/}
       {/*<Welcome city="München" />*/}
       {/*<Welcome />*/}
+    </QueryClientProvider>
   );
 }
