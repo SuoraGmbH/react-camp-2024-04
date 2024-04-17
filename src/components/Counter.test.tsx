@@ -40,7 +40,7 @@ describe("<Counter /> functionality tests", () => {
   });
 
   test.each([5, 15, 50])(
-    "clicking the button %i times increments the counter to %i (meh)",
+    "clicking the button %i times increments the counter to the amount of clicks we made",
     async (i) => {
       const user = userEvent.setup();
 
