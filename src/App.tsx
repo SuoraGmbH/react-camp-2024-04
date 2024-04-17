@@ -42,12 +42,22 @@ export function App() {
         }}
       />
       <hr />
-      <GithubRepoStats />
-      <Counter />
-      <Counter />
-      <Welcome city="Oer-Erkenschwick" />
-      <Welcome city="München" />
-      <Welcome />
-    </>
+      <TimeEntryListTanstackQuery />
+      {/*<Blabla />*/}
+      {/*<TimeEntryList timeEntries={timeEntries} />*/}
+      {/*<TimeEntryForm*/}
+      {/*  onAddTimeEntry={(timeEntry: TimeEntry) => {*/}
+      {/*    setTimeEntries((prevTimeEntries) => {*/}
+      {/*      return [...prevTimeEntries, timeEntry];*/}
+      {/*    });*/}
+      {/*  }}*/}
+      {/*/>*/}
+      <hr />
+      {/*<GithubRepoStats />*/}
+      {/*<Counter />*/}
+      {/*<Counter />*/}
+      {/*<Welcome city="Oer-Erkenschwick" />*/}
+      {/*<Welcome city="München" />*/}
+      {/*<Welcome />*/}
   );
 }
