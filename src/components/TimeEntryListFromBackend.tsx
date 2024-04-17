@@ -2,7 +2,7 @@ import { TimeEntryList } from "./TimeEntryList.tsx";
 import { useEffect, useState } from "react";
 import TimeEntry from "../domain/TimeEntry.ts";
 
-export const TimeEntryListFromBackend = () => {
+const useTimeEntriesFromBackend = () => {
   const [timeEntries, setTimeEntries] = useState<TimeEntry[]>();
 
   useEffect(() => {
@@ -10,6 +10,12 @@ export const TimeEntryListFromBackend = () => {
       .then((response) => response.json())
       .then(setTimeEntries);
   }, []);
+
+  return timeEntries;
+};
+
+export const TimeEntryListFromBackend = () => {
+  const timeEntries = useTimeEntriesFromBackend();
 
   if (timeEntries === undefined) {
     return <div>Löading</div>;
