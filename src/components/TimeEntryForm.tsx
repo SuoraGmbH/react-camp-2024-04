@@ -29,8 +29,8 @@ export const TimeEntryForm: React.FunctionComponent<Props> = ({
       <label htmlFor={inputId}>Comment</label>
       <input
         id={inputId}
-        name="comment"
         value={inputValue}
+        placeholder="kommentaaar"
         onChange={(event) => {
           setInputValue(event.target.value);
         }}
