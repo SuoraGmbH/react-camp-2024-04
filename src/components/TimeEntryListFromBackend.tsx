@@ -1,8 +1,9 @@
 import { TimeEntryList } from "./TimeEntryList.tsx";
 import { useEffect, useState } from "react";
+import TimeEntry from "../domain/TimeEntry.ts";
 
 export const TimeEntryListFromBackend = () => {
-  const [timeEntries, setTimeEntries] = useState([]);
+  const [timeEntries, setTimeEntries] = useState<TimeEntry[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/timeEntries")
