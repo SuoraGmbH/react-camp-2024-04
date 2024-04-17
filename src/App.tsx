@@ -2,12 +2,23 @@ import { TimeEntryListFromBackend } from "./components/TimeEntryListFromBackend.
 import { TimeEntryListTanstackQuery } from "./components/TimeEntryListTanstackQuery.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchInterval: 30_000,
+    },
+  },
+});
+
 export function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TimeEntryListFromBackend />
+      {/*<TimeEntryListFromBackend />*/}
       <hr />
+      <TimeEntryListTanstackQuery />
+      <TimeEntryListTanstackQuery />
+      <TimeEntryListTanstackQuery />
+      <TimeEntryListTanstackQuery />
       <TimeEntryListTanstackQuery />
     </QueryClientProvider>
   );
