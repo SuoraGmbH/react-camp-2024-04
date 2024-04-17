@@ -8,5 +8,9 @@ interface Props {
 export const TimeEntryView: React.FunctionComponent<Props> = ({
   timeEntry,
 }) => {
+  if (timeEntry.id !== "1") {
+    return <div>{timeEntry.comment}</div>;
+  }
+
   return <pre>{JSON.stringify(timeEntry, undefined, 2)}</pre>;
 };
