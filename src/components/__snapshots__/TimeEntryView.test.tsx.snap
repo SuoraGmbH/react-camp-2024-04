@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`for id 1 it display the debug view 1`] = `
+<div>
+  <pre>
+    {
+  "id": "1",
+  "start": "2024-04-17T09:44:00.000Z",
+  "end": "2024-04-17T09:44:00.000Z",
+  "comment": "This is for a special test case!"
+}
+  </pre>
+</div>
+`;
