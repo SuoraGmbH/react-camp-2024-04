@@ -67,6 +67,7 @@ it("fires the addTimeEntry event after submitting the form", async () => {
   expect(handleTimeEntryMock.mock.calls[0][0].comment).toMatchInlineSnapshot(
     `"Hallo Welt"`,
   );
+  expect(handleTimeEntryMock.mock.calls[0][0].id).toBeDefined();
   expect(handleTimeEntryMock.mock.calls[0][0].id).toBeTypeOf("string");
   expect(handleTimeEntryMock).toHaveBeenCalledWith(
     expect.objectContaining({
