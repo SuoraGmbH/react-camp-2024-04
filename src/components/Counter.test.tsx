@@ -38,4 +38,19 @@ describe("<Counter /> functionality tests", () => {
 
     expect(screen.getByText(/zähler steht bei 2/i)).toBeVisible();
   });
+
+  test.each([5, 15, 50])(
+    "clicking the button %i times increments the counter to %i (meh)",
+    async (i) => {
+      const user = userEvent.setup();
+
+      for (let j = 0; j < i; j++) {
+        await clickIncrement(user);
+      }
+
+      expect(
+        screen.getByText(`zähler steht bei ${i}`, { exact: false }),
+      ).toBeVisible();
+    },
+  );
 });
