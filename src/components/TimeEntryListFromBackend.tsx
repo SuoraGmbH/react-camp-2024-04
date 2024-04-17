@@ -2,14 +2,20 @@ import { TimeEntryList } from "./TimeEntryList.tsx";
 import { useEffect, useState } from "react";
 import TimeEntry from "../domain/TimeEntry.ts";
 
-const useFetchData = function <ResponseData>(url: string) {
-  const [data, setData] = useState<ResponseData>();
+const usePromiseData = function <PromiseData>(promise: () => Promise<any>) {
+  const [data, setData] = useState<PromiseData>();
 
   useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then(setData);
-  }, [url]);
+    promise().then(setData);
+  }, [promise]);
+
+  return data;
+};
+
+const useFetchData = function <ResponseData>(url: string) {
+  const data = usePromiseData<ResponseData>(async () => {
+    return fetch(url).then((response) => response.json());
+  });
 
   return data;
 };
@@ -20,9 +26,6 @@ const useTimeEntriesFromBackend = () => {
 
 export const TimeEntryListFromBackend = () => {
   const timeEntries = useTimeEntriesFromBackend();
-  const timeEntry = useFetchData<TimeEntry>(
-    "http://localhost:3001/timeEntries/2022-01-10T13:59:24.082Z",
-  );
 
   if (timeEntries === undefined) {
     return <div>Löading</div>;
@@ -31,7 +34,6 @@ export const TimeEntryListFromBackend = () => {
   return (
     <>
       <TimeEntryList timeEntries={timeEntries} />
-      <pre>{JSON.stringify(timeEntry, undefined, 2)}</pre>
     </>
   );
 };
