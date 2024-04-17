@@ -21,6 +21,15 @@ it("greets with the city name when you pass", () => {
   expect(screen.getByText(/dresden/i)).toBeVisible();
 });
 
+it.each(["Witten", "Dresden"])(
+  "greets with the city name %s when you pass it",
+  (city) => {
+    render(<Welcome city={city} />);
+
+    expect(screen.getByText(city, { exact: false })).toBeVisible();
+  },
+);
+
 it("greets you as a stranger if the city name is an empty string", () => {
   render(<Welcome city="" />);
 
