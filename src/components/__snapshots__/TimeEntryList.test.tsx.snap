@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders the given items 1`] = `
+<div>
+  <div>
+    <div>
+      This is just for tests
+    </div>
+    <div>
+      This is the second time entry
+    </div>
+  </div>
+</div>
+`;
