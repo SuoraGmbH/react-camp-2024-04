@@ -11,8 +11,6 @@ it("greets with hello stranger when we don't pass a city", () => {
 
   expect(screen.getByText(/hello stranger/i)).toBeVisible();
   expect(screen.getByText("hello stranger", { exact: false })).toBeVisible();
-
-  screen.getByText(/hello stranger/i);
 });
 
 it("greets with the city name when you pass", () => {
