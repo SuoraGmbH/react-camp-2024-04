@@ -2,16 +2,20 @@ import { TimeEntryList } from "./TimeEntryList.tsx";
 import { useEffect, useState } from "react";
 import TimeEntry from "../domain/TimeEntry.ts";
 
-const useTimeEntriesFromBackend = () => {
-  const [timeEntries, setTimeEntries] = useState<TimeEntry[]>();
+const useFetchData = function <ResponseData>(url: string) {
+  const [data, setData] = useState<ResponseData>();
 
   useEffect(() => {
-    fetch("http://localhost:3001/timeEntries")
+    fetch(url)
       .then((response) => response.json())
-      .then(setTimeEntries);
-  }, []);
+      .then(setData);
+  }, [url]);
 
-  return timeEntries;
+  return data;
+};
+
+const useTimeEntriesFromBackend = () => {
+  return useFetchData<TimeEntry[]>("http://localhost:3001/timeEntries");
 };
 
 export const TimeEntryListFromBackend = () => {
