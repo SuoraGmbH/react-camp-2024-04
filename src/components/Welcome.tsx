@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const Welcome: React.FunctionComponent<Props> = ({ city }) => {
-  if (!city) {
+  if (!city || city.trim() === "") {
     return <h1>Hello stranger</h1>;
   }
 
